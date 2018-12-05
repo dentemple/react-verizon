@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import BackgroundImage from '../../common/BackgroundImage';
+import { BackgroundImage } from '../../common';
 import CallToAction from './CallToAction';
 import hero from '../../../assets/img/hero.jpg';
 
@@ -11,9 +11,6 @@ class Hero extends Component {
     this.state = {
       isLoaded: false
     };
-
-    this.videoUrl =
-      'https://ss7.vzw.com/is/content/VerizonWireless/2018/Videos/HPM-Holiday-Jolly-1272x800-v2.mp4';
   }
 
   componentDidMount() {
@@ -21,38 +18,22 @@ class Hero extends Component {
   }
 
   render() {
-    if (this.state.isLoaded) {
-      return (
-        <BackgroundImage img={hero} height='95vh'>
-          {/* <StyledVideo loop autoPlay>
-            <source src={this.videoUrl} type='video/mp4' />
-            Your browser does not support the video tag.
-          </StyledVideo> */}
-          <CallToAction />
-        </BackgroundImage>
-      );
-    } else {
-      return <BackgroundImage />;
-    }
+    return (
+      <StyledContainer img={hero} height='95vh'>
+        <CallToAction gridArea='call-to-action' />
+      </StyledContainer>
+    );
   }
 }
 
-// const StyledVideo = styled.video`
-//   /* box */
-//   border: 1px solid #d8dada;
-//   max-width: 1270px;
-//   min-height: 100%;
-//   pointer-events: none;
-//   z-index: -1;
+const StyledContainer = styled(BackgroundImage)`
+  justify-items: start;
+  align-items: end;
+  grid-template-areas: 'call-to-action';
 
-//   /* positioning */
-//   height: auto;
-//   object-fit: cover;
-//   overflow: hidden;
-//   position: absolute;
-//   left: 50%;
-//   top: 50%;
-//   transform: translateX(-50%) translateY(-50%);
-// `;
+  @media (min-width: ${({ theme }) => theme.screens.desktop}px) {
+    justify-items: end;
+  }
+`;
 
 export default Hero;

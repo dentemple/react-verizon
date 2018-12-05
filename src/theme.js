@@ -10,6 +10,10 @@ export const theme = {
     primary: 'sans-serif',
     secondary: 'serif'
   },
+  screens: {
+    desktop: 767,
+    maxWidth: 1270
+  },
   boxShadow: '0 3px 0px -2px #d8dada'
 };
 

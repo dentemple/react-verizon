@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import FlatButton from '../../common/FlatButton';
 
-const CallToAction = () => (
-  <StyledContainer>
+const CallToAction = ({ gridArea }) => (
+  <StyledContainer gridArea={gridArea}>
     <Text>
       Bring on those fuzzy feelings. Get in the holiday spirit with the perfect
       gift.
@@ -14,22 +15,22 @@ const CallToAction = () => (
 );
 
 const StyledContainer = styled.div`
-  /* box */
+  grid-area: ${({ gridArea }) => gridArea};
   padding: 20px;
-
-  /* positioning */
-  position: absolute;
-  bottom: 10%;
-  right: 0;
 `;
 
 const Text = styled.p`
-  /* box */
   width: 220px;
+  font-size: 16px;
+  line-height: 0.95;
 
-  /* content */
-  font-size: 19px;
-  line-height: 18px;
+  @media (min-width: ${({ theme }) => theme.screens.desktop}px) {
+    font-size: 17px;
+  }
 `;
+
+CallToAction.propTypes = {
+  gridArea: PropTypes.string
+};
 
 export default CallToAction;

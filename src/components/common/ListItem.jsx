@@ -9,13 +9,14 @@ const ListItem = ({ children, to }) => (
     <StyledLink to={to}>{children}</StyledLink>
   </StyledListItem>
 );
-ListItem.propTypes = {
-  children: PropTypes.node.isRequired,
-  to: PropTypes.string.isRequired
-};
 
 const StyledListItem = styled.li`
   margin: 0.5em;
 `;
+
+ListItem.propTypes = {
+  children: PropTypes.node.isRequired,
+  to: PropTypes.string.isRequired
+};
 
 export default ListItem;

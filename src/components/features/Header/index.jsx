@@ -1,64 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Cell, Logo } from '../../common';
-import { Cart, HamburgerMenu, Search } from '../../common/icons';
+import PlaceCart from './PlaceCart';
+import PlaceLogo from './PlaceLogo';
+import PlaceMenu from './PlaceMenu';
+import PlaceSearch from './PlaceSearch';
+import PlaceSignin from './PlaceSignin';
 
 const Header = () => (
   <StyledHeader role='banner'>
     <PlaceLogo gridArea='logo' />
-    <PlaceSearch gridArea='search' />
-    <PlaceCart gridArea='cart' />
-    <PlaceMenu gridArea='menu' />
-    <PlaceSignin gridArea='signin' />
+    <Navbar>
+      <PlaceSearch gridArea='search' />
+      <PlaceCart gridArea='cart' />
+      <PlaceMenu gridArea='menu' />
+      <PlaceSignin gridArea='signin' />
+    </Navbar>
   </StyledHeader>
-);
-
-const PlaceSearch = () => (
-  <Cell gridArea='search'>
-    <Search />
-  </Cell>
-);
-
-const PlaceLogo = () => (
-  <Cell gridArea='logo'>
-    <Logo />
-  </Cell>
-);
-
-const PlaceCart = () => (
-  <Cell gridArea='cart'>
-    <Cart />
-  </Cell>
-);
-
-const PlaceMenu = () => (
-  <Cell gridArea='menu'>
-    <HamburgerMenu />
-  </Cell>
-);
-
-const PlaceSignin = () => (
-  <Cell gridArea='signin'>
-    <p style={{ margin: 0, justifySelf: 'end' }}>Sign in</p>
-  </Cell>
 );
 
 const StyledHeader = styled.header`
   /* box */
-  background-color: ${props => props.theme.colors.white};
-  box-shadow: ${props => props.theme.boxShadow};
+  background-color: ${({ theme }) => theme.colors.white};
+  box-shadow: ${({ theme }) => theme.boxShadow};
   padding: 1.5em 1.5em 0;
   width: 100%;
 
-  /* display */
+  /* display - small screen */
   display: grid;
-  grid-column-gap: 20px;
-  grid-template-columns: 1fr 25px 25px 25px;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 50px 20px;
-  grid-template-areas:
-    'logo search cart menu'
-    '. . signin signin';
+  grid-template-areas: 'logo nav' 'logo nav';
 
   /* positioning */
   position: fixed;
@@ -66,6 +38,37 @@ const StyledHeader = styled.header`
 
   /* content */
   font-size: 0.8em;
+
+  /* desktop */
+  @media (min-width: ${({ theme }) => theme.screens.desktop}px) {
+    grid-column-gap: 20px;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: initial;
+    padding-bottom: 1.5em;
+  }
+`;
+
+const Navbar = styled.nav`
+  /* display */
+  grid-area: nav;
+  display: grid;
+  justify-content: flex-end;
+  grid-column-gap: 20px;
+  grid-template-columns: 25px 25px 25px;
+  grid-template-rows: 50px 20px;
+  grid-template-areas:
+    'search cart menu'
+    '. signin signin';
+
+  /* desktop */
+  @media (min-width: ${({ theme }) => theme.screens.desktop}px) {
+    grid-column-gap: 5px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: initial;
+    grid-template-areas:
+      'menu search cart'
+      'menu signin signin';
+  }
 `;
 
 export default Header;

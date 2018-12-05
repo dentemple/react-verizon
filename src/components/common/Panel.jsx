@@ -33,7 +33,6 @@ const FixedColumn = styled.article`
 `;
 
 const FixedHeading = styled.h2`
-  /* box */
   height: 118px;
   margin: 0px 0px 20px;
 `;
