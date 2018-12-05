@@ -1,31 +1,21 @@
+// React libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createGlobalStyle} from 'styled-components';
+import { BrowserRouter } from 'react-router-dom';
 
-// Import Components
-import Container from './components/container';
-import Header from './components/header';
+// Styling
+import { ThemeProvider } from 'styled-components';
+import { theme } from './theme';
 
-// Global Style
-const GlobalStyle = createGlobalStyle`
-  body {
-    background: #212121;
-    color: #fff;
-    padding: 1em;
-    line-height: 1.8em;
-		font-size: 15;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeSpeed;
-    word-wrap: break-word
-  }
-`;
+// Top-level component
+import App from './components/App';
 
 // Render page
 ReactDOM.render(
-	<Container>
-		<Header>Hello World ⚡</Header>
-		<p>Example site using Styled React Boilerplate</p>
-		<GlobalStyle/>
-	</Container>,
-	document.getElementById('root')
+  <ThemeProvider theme={theme}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </ThemeProvider>,
+  document.getElementById('root')
 );
