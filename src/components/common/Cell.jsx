@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Cell = styled.div`
-  display: flex;
+  display: grid;
   grid-area: ${props => props.gridArea};
 `;
 

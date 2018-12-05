@@ -1,32 +1,47 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Cell, TextField } from '../../common';
+import { Cell, Logo } from '../../common';
 import { Cart, HamburgerMenu, Search } from '../../common/icons';
-
-import Logo from '../../common/Logo';
-import StyledLink from '../../common/StyledLink';
 
 const Header = () => (
   <StyledHeader role='banner'>
-    <Cell gridArea='logo'>
-      <StyledLink to='/'>
-        <Logo />
-      </StyledLink>
-    </Cell>
-    <Cell gridArea='search'>
-      <Search />
-    </Cell>
-    <Cell gridArea='cart'>
-      <Cart />
-    </Cell>
-    <Cell gridArea='menu'>
-      <HamburgerMenu />
-    </Cell>
-    <Cell gridArea='signin'>
-      <p style={{ margin: 0 }}>Sign in</p>
-    </Cell>
+    <PlaceLogo gridArea='logo' />
+    <PlaceSearch gridArea='search' />
+    <PlaceCart gridArea='cart' />
+    <PlaceMenu gridArea='menu' />
+    <PlaceSignin gridArea='signin' />
   </StyledHeader>
+);
+
+const PlaceSearch = () => (
+  <Cell gridArea='search'>
+    <Search />
+  </Cell>
+);
+
+const PlaceLogo = () => (
+  <Cell gridArea='logo'>
+    <Logo />
+  </Cell>
+);
+
+const PlaceCart = () => (
+  <Cell gridArea='cart'>
+    <Cart />
+  </Cell>
+);
+
+const PlaceMenu = () => (
+  <Cell gridArea='menu'>
+    <HamburgerMenu />
+  </Cell>
+);
+
+const PlaceSignin = () => (
+  <Cell gridArea='signin'>
+    <p style={{ margin: 0, justifySelf: 'end' }}>Sign in</p>
+  </Cell>
 );
 
 const StyledHeader = styled.header`
@@ -46,7 +61,7 @@ const StyledHeader = styled.header`
     '. . signin signin';
 
   /* positioning */
-  /* position: fixed; */
+  position: fixed;
   z-index: 1;
 
   /* content */
