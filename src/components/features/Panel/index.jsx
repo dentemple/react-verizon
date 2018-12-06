@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { HorizontalLine, Link } from '../../common';
+import { H2, HR, Link, Text } from '../../common';
 import { Cell, Row } from '../../common/layout';
 
 import { ChevronRight } from '../../common/icons';
@@ -11,13 +11,15 @@ const Panel = ({ description, heading, url }) => (
   <PlaceContents>
     <Row gridArea='heading'>
       <Link to={url}>
-        <h2>{heading}</h2>
+        <H2>{heading}</H2>
       </Link>
     </Row>
     <Row gridArea='line'>
-      <HorizontalLine />
+      <HR />
     </Row>
-    <Row gridArea='description'>{description}</Row>
+    <Row gridArea='description'>
+      <Text>{description}</Text>
+    </Row>
     <Row gridArea='arrow' style={{ justifyContent: 'flex-end' }}>
       <Link to={url}>
         <ChevronRight />

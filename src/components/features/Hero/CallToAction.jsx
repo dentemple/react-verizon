@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import { FlatButton } from '../../common/buttons';
+import { Text } from '../../common';
 
 const CallToAction = () => (
   <>
@@ -13,16 +14,6 @@ const CallToAction = () => (
     <FlatButton>Shop</FlatButton>
   </>
 );
-
-const Text = styled.p`
-  width: 220px;
-  font-size: 16px;
-  line-height: 0.95;
-
-  @media (min-width: ${({ theme }) => theme.screens.desktop}px) {
-    font-size: 17px;
-  }
-`;
 
 CallToAction.propTypes = {
   gridArea: PropTypes.string

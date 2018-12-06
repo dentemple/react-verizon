@@ -20,12 +20,12 @@ import { theme } from './theme';
 //   </Theme>,
 //   document.getElementById('root')
 // );
-// -----
 
 /*
   Configures Hot Module Reloading
   Uncomment the following section to activate Hot Module Reloading
 */
+
 import { AppContainer as HotReload } from 'react-hot-loader';
 
 let render = () => {
