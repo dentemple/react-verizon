@@ -5,6 +5,7 @@ import { GlobalStyle } from '../theme';
 
 import Header from './features/Header';
 import Home from './pages/Home';
+import Foo from './pages/Foo';
 
 class App extends Component {
   render() {
@@ -13,7 +14,8 @@ class App extends Component {
         <GlobalStyle />
         <Header />
         <Switch>
-          <Route exact path='/' component={Home} />
+          <Route exact path='/foo' component={Foo} />
+          <Route path='/' component={Home} />
         </Switch>
       </>
     );

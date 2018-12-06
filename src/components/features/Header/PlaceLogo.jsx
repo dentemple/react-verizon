@@ -1,16 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import { Cell, Logo } from '../../common';
+import Logo from '../Logo';
 
-const PlaceLogo = ({ gridArea }) => (
-  <Cell gridArea={gridArea}>
-    <Logo />
-  </Cell>
-);
-
-PlaceLogo.propTypes = {
-  gridArea: PropTypes.string
-};
+const PlaceLogo = () => <Logo />;
 
 export default PlaceLogo;

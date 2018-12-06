@@ -25,8 +25,8 @@ export const GlobalStyle = createGlobalStyle`
   body {
     /* box */
     background-color: ${theme.colors.white};
-    height: 100vh;
     width: 100%;
+    height: 100vh;
     margin: 0;
     padding: 0;
 
@@ -36,13 +36,12 @@ export const GlobalStyle = createGlobalStyle`
     font-family: sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6, input {
+  input {
     font-family: ${theme.fonts.secondary};
   }
 
   div#root {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     height: 100vh;
   }
 `;

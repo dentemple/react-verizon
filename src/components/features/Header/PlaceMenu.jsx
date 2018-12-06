@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { Cell, ListItem, ListRow } from '../../common';
-import { HamburgerMenu } from '../../common/icons';
+import { ListItem, ListRow } from '../../common';
+import { Hamburger } from '../../common/icons';
 import { theme } from '../../../theme';
 
 class PlaceMenu extends Component {
@@ -29,12 +29,11 @@ class PlaceMenu extends Component {
   }
 
   render() {
-    const { gridArea } = this.props;
     const { isDesktop } = this.state;
 
     if (isDesktop) {
       return (
-        <Cell gridArea={gridArea}>
+        <>
           <ListRow>
             <ListItem to='/'>Wireless</ListItem>
             <ListItem to='/'>In Home</ListItem>
@@ -43,18 +42,14 @@ class PlaceMenu extends Component {
           <ListRow style={{ fontWeight: 'bold' }}>
             <ListItem to='/'>Phones</ListItem>
             <ListItem to='/'>Plans</ListItem>
-            <ListItem to='/'>Holiday Deals</ListItem>
+            <ListItem to='/'>Holiday&nbsp;Deals</ListItem>
             <ListItem to='/'>Shop</ListItem>
             <ListItem to='/'>Support</ListItem>
           </ListRow>
-        </Cell>
+        </>
       );
     } else {
-      return (
-        <Cell gridArea={gridArea}>
-          <HamburgerMenu />
-        </Cell>
-      );
+      return <Hamburger />;
     }
   }
 }

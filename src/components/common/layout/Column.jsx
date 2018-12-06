@@ -1,20 +1,18 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const ListRow = styled.ul`
+const Column = styled.div`
   grid-area: ${({ gridArea }) => gridArea};
   display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  flex-direction: column;
 `;
 
-ListRow.propTypes = {
+Column.propTypes = {
   gridArea: PropTypes.string,
   theme: PropTypes.object
 };
-ListRow.defaultProps = {
+Column.defaultProps = {
   gridArea: 'auto'
 };
 
-export default ListRow;
+export default Column;

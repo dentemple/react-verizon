@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 
-const FlatButton = styled.button`
+const Button = styled.button`
   /* box */
-  background: ${({ theme }) => theme.colors.white};
-  border: 1px solid ${({ theme }) => theme.colors.black};
-  border-radius: 100px;
   cursor: pointer;
   height: 36px;
   width: 125px;
@@ -22,4 +19,4 @@ const FlatButton = styled.button`
   }
 `;
 
-export default FlatButton;
+export default Button;

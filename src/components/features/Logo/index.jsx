@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import StyledLink from '../common/StyledLink';
-import logo from '../../assets/img/logo.png';
+import Link from '../../common/Link';
+import logo from '../../../assets/img/logo.png';
 
 const Logo = () => (
-  <MatchLinkSize to='/'>
+  <SizeAdjustedLink to='/'>
     <StyledImage src={logo} alt='Verizon' />
-  </MatchLinkSize>
+  </SizeAdjustedLink>
 );
 
-const MatchLinkSize = styled(StyledLink)`
+const SizeAdjustedLink = styled(Link)`
   width: 112px;
 
   @media (min-width: ${({ theme }) => theme.screens.desktop}px) {

@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React from 'react';
 
-import BackgroundImage from '../../common/BackgroundImage';
+import CellWithBackground from '../../common/CellWithBackground';
 import christmas from '../../../assets/img/christmas.jpg';
 
 const Campaign = () => (
-  <BackgroundImage img={christmas} height='75vh'>
+  <CellWithBackground img={christmas} height='75vh'>
     <p>Text</p>
-  </BackgroundImage>
+  </CellWithBackground>
 );
 
 export default Campaign;

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
-import { Cell, ListItem, ListRow, StyledLink } from '../../common';
+import { ListItem, ListRow, Link } from '../../common';
 import { theme } from '../../../theme';
 
 class PlaceSignin extends Component {
@@ -33,29 +32,21 @@ class PlaceSignin extends Component {
 
     if (isDesktop) {
       return (
-        <Cell gridArea={gridArea}>
-          <ListRow style={{ justifySelf: 'end' }}>
-            <ListItem to='/'>Español</ListItem>
-            <ListItem to='/'>
-              <strong>Sign In</strong>
-            </ListItem>
-          </ListRow>
-        </Cell>
+        <ListRow style={{ justifyContent: 'flex-end' }}>
+          <ListItem to='/'>Español</ListItem>
+          <ListItem to='/'>
+            <strong>Sign In</strong>
+          </ListItem>
+        </ListRow>
       );
     } else {
       return (
-        <Cell gridArea={gridArea}>
-          <StyledLink to='/' style={{ justifySelf: 'end' }}>
-            <strong>Sign in</strong>
-          </StyledLink>
-        </Cell>
+        <Link to='/' style={{ justifySelf: 'end' }}>
+          <strong>Sign in</strong>
+        </Link>
       );
     }
   }
 }
-
-PlaceSignin.propTypes = {
-  gridArea: PropTypes.string
-};
 
 export default PlaceSignin;

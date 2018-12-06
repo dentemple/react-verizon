@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
-import { Cell, ListItem, ListRow, TextField } from '../../common';
+import { ListItem, ListRow } from '../../common';
+import { InputField } from '../../common/forms';
 import { Search } from '../../common/icons';
 import { theme } from '../../../theme';
 
@@ -29,32 +29,21 @@ class PlaceSearch extends Component {
   }
 
   render() {
-    const { gridArea } = this.props;
     const { isDesktop } = this.state;
 
     if (isDesktop) {
       return (
-        <Cell gridArea={gridArea}>
-          <ListRow style={{ justifyContent: 'flex-end' }}>
-            <ListItem to='/'>Stores</ListItem>
-            <li style={{ margin: '0.5em' }}>
-              <TextField placeholder='Search' />
-            </li>
-          </ListRow>
-        </Cell>
+        <ListRow style={{ justifyContent: 'flex-end' }}>
+          <ListItem to='/'>Stores</ListItem>
+          <li style={{ margin: '0.5em' }}>
+            <InputField placeholder='Search' />
+          </li>
+        </ListRow>
       );
     } else {
-      return (
-        <Cell gridArea={gridArea}>
-          <Search />
-        </Cell>
-      );
+      return <Search />;
     }
   }
 }
-
-PlaceSearch.propTypes = {
-  gridArea: PropTypes.string
-};
 
 export default PlaceSearch;

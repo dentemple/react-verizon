@@ -10,5 +10,8 @@ Cell.propTypes = {
   gridArea: PropTypes.string,
   theme: PropTypes.object
 };
+Cell.defaultProps = {
+  gridArea: 'auto'
+};
 
 export default Cell;

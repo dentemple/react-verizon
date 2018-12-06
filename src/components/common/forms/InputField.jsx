@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const TextField = styled.input`
+const InputField = styled.input`
   /* box */
   border: none;
   border-bottom: 1px solid grey;
@@ -12,4 +12,4 @@ const TextField = styled.input`
   line-height: 1.15;
 `;
 
-export default TextField;
+export default InputField;

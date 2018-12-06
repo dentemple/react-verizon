@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 
+import { Page } from '../common/layout';
+
 import Campaign from '../features/Campaign';
 import Hero from '../features/Hero';
-import PageContainer from '../common/PageContainer';
 import PromoSlider from '../features/PromoSlider';
 
 class HomePage extends Component {
   render() {
     return (
-      <PageContainer>
+      <Page>
         <Hero />
         <PromoSlider />
         <Campaign />
-      </PageContainer>
+      </Page>
     );
   }
 }

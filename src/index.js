@@ -1,21 +1,50 @@
 // React libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 // Styling
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider as Theme } from 'styled-components';
 import { theme } from './theme';
 
-// Top-level component
-import App from './components/App';
+/*
+  Comment out the following section when activating Hot Module Reloading
+*/
+// import App from './components/App';
 
-// Render page
-ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </ThemeProvider>,
-  document.getElementById('root')
-);
+// ReactDOM.render(
+//   <Theme theme={theme}>
+//     <Router>
+//       <App />
+//     </Router>
+//   </Theme>,
+//   document.getElementById('root')
+// );
+// -----
+
+/*
+  Configures Hot Module Reloading
+  Uncomment the following section to activate Hot Module Reloading
+*/
+import { AppContainer as HotReload } from 'react-hot-loader';
+
+let render = () => {
+  const App = require('./components/App').default;
+
+  ReactDOM.render(
+    <HotReload>
+      <Theme theme={theme}>
+        <Router>
+          <App />
+        </Router>
+      </Theme>
+    </HotReload>,
+    document.getElementById('root')
+  );
+};
+
+module.hot.accept(['./components/App', './theme'], () => {
+  render();
+});
+
+render();

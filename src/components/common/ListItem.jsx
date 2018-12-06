@@ -2,15 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import StyledLink from './StyledLink';
+import { Link } from '../common';
 
 const ListItem = ({ children, to }) => (
-  <StyledListItem>
-    <StyledLink to={to}>{children}</StyledLink>
-  </StyledListItem>
+  <StyledItem>
+    <Link to={to}>{children}</Link>
+  </StyledItem>
 );
 
-const StyledListItem = styled.li`
+const StyledItem = styled.li`
   margin: 0.5em;
 `;
 

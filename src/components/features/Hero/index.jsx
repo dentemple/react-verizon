@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { BackgroundImage } from '../../common';
+import { CellWithBackground } from '../../common';
+import { Cell } from '../../common/layout';
+
 import CallToAction from './CallToAction';
 import hero from '../../../assets/img/hero.jpg';
 
@@ -19,14 +21,17 @@ class Hero extends Component {
 
   render() {
     return (
-      <StyledContainer img={hero} height='95vh'>
-        <CallToAction gridArea='call-to-action' />
-      </StyledContainer>
+      <StyledBackground img={hero} height='95vh'>
+        <Cell gridArea='call-to-action'>
+          <CallToAction />
+        </Cell>
+      </StyledBackground>
     );
   }
 }
 
-const StyledContainer = styled(BackgroundImage)`
+const StyledBackground = styled(CellWithBackground)`
+  padding: 20px;
   justify-items: start;
   align-items: end;
   grid-template-areas: 'call-to-action';

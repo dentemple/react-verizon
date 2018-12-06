@@ -1,23 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import FlatButton from '../../common/FlatButton';
+import { FlatButton } from '../../common/buttons';
 
-const CallToAction = ({ gridArea }) => (
-  <StyledContainer gridArea={gridArea}>
+const CallToAction = () => (
+  <>
     <Text>
       Bring on those fuzzy feelings. Get in the holiday spirit with the perfect
       gift.
     </Text>
     <FlatButton>Shop</FlatButton>
-  </StyledContainer>
+  </>
 );
-
-const StyledContainer = styled.div`
-  grid-area: ${({ gridArea }) => gridArea};
-  padding: 20px;
-`;
 
 const Text = styled.p`
   width: 220px;

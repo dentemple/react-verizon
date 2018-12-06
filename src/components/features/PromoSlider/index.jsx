@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Panel from '../../common/Panel';
-import Row from '../../common/Row';
+import { Row } from '../../common/layout';
+import Panel from '../../features/Panel';
 
 class PromoSlider extends Component {
   constructor() {

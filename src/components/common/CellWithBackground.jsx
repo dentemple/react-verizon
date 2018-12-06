@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import Cell from './Cell';
+import { Cell } from './layout';
 
-const BackgroundImage = styled(Cell)`
+const CellWithBackground = styled(Cell)`
   /* box */
   background-image: url(${({ img }) => img});
   background-position: center;
@@ -11,14 +11,18 @@ const BackgroundImage = styled(Cell)`
   border: 1px solid ${({ theme }) => theme.colors.lightgray};
   min-height: ${({ height }) => height};
   max-width: ${({ theme }) => theme.screens.maxWidth}px;
-  z-index: 0;
+  z-index: -1;
 `;
 
-BackgroundImage.propTypes = {
+CellWithBackground.propTypes = {
   gridArea: PropTypes.string,
   height: PropTypes.string,
-  img: PropTypes.string,
+  img: PropTypes.string.isRequired,
   theme: PropTypes.object
 };
+CellWithBackground.defaultProps = {
+  gridArea: 'auto',
+  height: '100%'
+};
 
-export default BackgroundImage;
+export default CellWithBackground;
