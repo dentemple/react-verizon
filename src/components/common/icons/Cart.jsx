@@ -1,6 +1,12 @@
 import React from 'react';
 import { FiShoppingCart } from 'react-icons/fi';
 
-const Hamburger = () => <FiShoppingCart size='1.6em' />;
+import { IconButtonBase } from '../buttons';
 
-export default Hamburger;
+const Cart = () => (
+  <IconButtonBase>
+    <FiShoppingCart />
+  </IconButtonBase>
+);
+
+export default Cart;

@@ -1,6 +1,17 @@
 import React from 'react';
 import { FiSearch } from 'react-icons/fi';
+import PropTypes from 'prop-types';
 
-const Search = () => <FiSearch size='1.6em' />;
+import { IconButtonBase } from '../buttons';
+
+const Search = ({ handleClick, ...rest }) => (
+  <IconButtonBase onClick={handleClick}>
+    <FiSearch {...rest} />
+  </IconButtonBase>
+);
+
+Search.propTypes = {
+  handleClick: PropTypes.func
+};
 
 export default Search;

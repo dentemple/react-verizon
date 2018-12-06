@@ -1,6 +1,17 @@
 import React from 'react';
 import { FiX } from 'react-icons/fi';
+import PropTypes from 'prop-types';
 
-const IconX = () => <FiX size='1.6em' />;
+import { IconButtonBase } from '../buttons';
+
+const IconX = ({ handleClick, ...rest }) => (
+  <IconButtonBase onClick={handleClick}>
+    <FiX {...rest} />
+  </IconButtonBase>
+);
+
+IconX.propTypes = {
+  handleClick: PropTypes.func
+};
 
 export default IconX;
