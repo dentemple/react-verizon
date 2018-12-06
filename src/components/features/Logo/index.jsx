@@ -5,18 +5,10 @@ import Link from '../../common/Link';
 import logo from '../../../assets/img/logo.png';
 
 const Logo = () => (
-  <SizeAdjustedLink to='/'>
+  <Link to='/'>
     <StyledImage src={logo} alt='Verizon' />
-  </SizeAdjustedLink>
+  </Link>
 );
-
-const SizeAdjustedLink = styled(Link)`
-  width: 112px;
-
-  @media (min-width: ${({ theme }) => theme.screens.desktop}px) {
-    width: 188px;
-  }
-`;
 
 const StyledImage = styled.img`
   width: 112px;

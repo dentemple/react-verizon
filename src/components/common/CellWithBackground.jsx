@@ -11,7 +11,6 @@ const CellWithBackground = styled(Cell)`
   border: 1px solid ${({ theme }) => theme.colors.lightgray};
   min-height: ${({ height }) => height};
   max-width: ${({ theme }) => theme.screens.maxWidth}px;
-  z-index: -1;
 `;
 
 CellWithBackground.propTypes = {

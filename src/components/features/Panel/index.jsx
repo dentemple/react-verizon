@@ -3,9 +3,8 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import { H2, HR, Link, Text } from '../../common';
-import { Cell, Row } from '../../common/layout';
-
 import { ChevronRight } from '../../common/icons';
+import { Cell, Row } from '../../common/layout';
 
 const Panel = ({ description, heading, url }) => (
   <PlaceContents>
@@ -28,12 +27,6 @@ const Panel = ({ description, heading, url }) => (
   </PlaceContents>
 );
 
-Panel.propTypes = {
-  description: PropTypes.string.isRequired,
-  heading: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired
-};
-
 const PlaceContents = styled(Cell)`
   /* box */
   border: 1px solid ${({ theme }) => theme.colors.lightgray};
@@ -49,5 +42,11 @@ const PlaceContents = styled(Cell)`
     'description'
     'arrow';
 `;
+
+Panel.propTypes = {
+  description: PropTypes.string.isRequired,
+  heading: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
+};
 
 export default Panel;

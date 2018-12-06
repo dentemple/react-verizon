@@ -7,9 +7,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider as Theme } from 'styled-components';
 import { theme } from './theme';
 
-/*
-  Comment out the following section when activating Hot Module Reloading
-*/
+/**
+ * Comment out the following section when activating Hot Module Reloading
+ */
+
 // import App from './components/App';
 
 // ReactDOM.render(
@@ -22,12 +23,16 @@ import { theme } from './theme';
 // );
 
 /*
-  Configures Hot Module Reloading
-  Uncomment the following section to activate Hot Module Reloading
-*/
+  
+/** ------------------------------------------------------------------
+ * Configures Hot Module Reloading.
+ * Uncomment the following section to activate Hot Module Reloading
+ */
 
+// Necessary for hot reloading component state
 import { AppContainer as HotReload } from 'react-hot-loader';
 
+// Encapsulated in a function since render has to be run twice
 let render = () => {
   const App = require('./components/App').default;
 
@@ -44,7 +49,9 @@ let render = () => {
 };
 
 module.hot.accept(['./components/App', './theme'], () => {
+  // Hot swap
   render();
 });
 
+// Run for the first time
 render();

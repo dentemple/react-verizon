@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import { FlatButton } from '../../common/buttons';
@@ -7,7 +6,7 @@ import { Text } from '../../common';
 
 const CallToAction = () => (
   <>
-    <Text>
+    <Text style={{ maxWidth: 220 }}>
       Bring on those fuzzy feelings. Get in the holiday spirit with the perfect
       gift.
     </Text>
